@@ -1,5 +1,5 @@
 // eslint-disable-next-line react/prop-types
-export const Input = ({type, labelText, placeholder, error, value, onChange}) => {
+const Input = ({type, labelText, placeholder, error, value, onChange}) => {
   return (
     <div className="input-element">
       <label htmlFor="inputElement">
@@ -12,3 +12,5 @@ export const Input = ({type, labelText, placeholder, error, value, onChange}) =>
     </div>
   );
 };
+
+export default Input

@@ -2,7 +2,7 @@ import Register from "./components/Register"
 
 const App = () => {
   return (
-    <div>
+    <div className="container-components">
       <Register/>
     </div>
   )

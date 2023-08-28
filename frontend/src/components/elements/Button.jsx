@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-export const Button = ({buttonText, onClick, error, labelText}) => {
+const Button = ({buttonText, onClick, error, labelText}) => {
   return (
     <div className="button-element">
       <label htmlFor="buttonEelement">
@@ -12,3 +12,5 @@ export const Button = ({buttonText, onClick, error, labelText}) => {
     </div>
   );
 };
+
+export default Button
