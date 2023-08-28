@@ -1,5 +1,6 @@
 import Input from "./elements/Input";
 import Select from "./elements/Select";
+import Button from "./elements/Button";
 
 const Register = () => {
     const sendFormRegister = () => {
@@ -18,6 +19,7 @@ const Register = () => {
                 <Input type="tel" placeholder="xxx-xxx-xxx" labelText="Telefono:"/>
                 <Select options={data} labelText="Departamento"/>
                 <Select options={data} labelText="Ciudad"/>
+                <Button buttonText="Enviar"/>
             </form>
         </div>
     )
