@@ -1,7 +1,7 @@
 // eslint-disable-next-line react/prop-types
 const Input = ({type, labelText, placeholder, error, value, onChange}) => {
   return (
-    <div className="input-element">
+    <div className="element-components">
       <label htmlFor="inputElement">
         {labelText}
       <input id= "inputElement"type={type} placeholder={placeholder} value={value} onChange={onChange}/>

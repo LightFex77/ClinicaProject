@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 const Select = ({ labelText, error, options }) => {
   return (
-    <div className="select-element">
+    <div className="element-components">
       <label htmlFor="selectElement">
         {labelText}
         <select id="selectElement">

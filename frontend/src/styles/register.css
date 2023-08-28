@@ -1,0 +1,77 @@
+.register-container{
+    padding: 1.5rem;
+    background: linear-gradient(to bottom, #E6E6FA, #D8BFD8);
+    width: 40%;
+    border-radius: 10px;
+    box-shadow: 10px 10px 10px #B573DC;
+}
+.register-container form {
+    display: flex;
+    flex-direction: column;
+}
+.register-container form .personal-section {
+    display: flex;
+    flex-direction: column;
+}
+.register-container form .direction-section {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+}
+.element-components{
+    width: 100%;
+}
+.element-components label {
+    display: flex;
+    flex-direction: column;
+}
+.element-components label select, input{
+    padding: 0.5rem;
+}
+.element-components label button {
+    background-color: #B573DC;
+    padding: 1rem;
+    color: #ffff;
+    border: 0;
+    cursor: pointer;
+}
+
+/* .register-container{
+    border: 1px red solid;
+    background-color: #ffff;
+    padding: 2rem;
+    min-width: 400px;
+    max-width: 200px;
+}
+.register-container form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+.register-container form section{
+    gap: 1rem;
+}
+.input-element label{
+    display: flex;
+    flex-direction: column;
+}
+
+.register-container form .direction-section{
+    display: flex;
+}
+.select-element{
+    width: 100%;
+}
+.select-element label{
+    display: flex;
+    flex-direction: column;
+}
+.select-element label select {
+    flex: 1;
+}
+.button-element label {
+    display: flex;
+}
+.button-element label button {
+    flex: 1;
+} */

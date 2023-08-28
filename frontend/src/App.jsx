@@ -1,10 +1,15 @@
-import Register from "./components/Register"
+import Register from "./components/Register";
+import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 const App = () => {
   return (
-    <div className="clinic-container">
+    <BrowserRouter>
+    <Routes>
+      <Route path="/" element={<div className="clinic-container">
       <Register/>
-    </div>
+    </div>}/>
+    </Routes>
+    </BrowserRouter>
   )
 }
 
