@@ -1,6 +1,7 @@
 .register-container{
     background: linear-gradient(to bottom, #E6E6FA, #D8BFD8);
     width: 30%;
+    border-radius: 5px;
 }
 .register-container form{
     display: flex;
@@ -26,4 +27,10 @@
     background-color: #B573DC;
     color: #ffff;
     border: 0;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+.element-components button:hover{
+    background-color: #A755A2;
+    transition-delay: 0.1s;
 }

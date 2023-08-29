@@ -2,7 +2,6 @@ import Input from "./elements/Input";
 import Button from "./elements/Button";
 import "../styles/register.css";
 import HeaderBody from "./elements/HeaderBody";
-import Select from "../components/elements/Select"
 // import {useEffect, useState} from "react";
 
 
@@ -40,15 +39,10 @@ const Register = () => {
       <form onSubmit={sendFormRegister}>
       <HeaderBody h1Text="Registrate" style={{ textAlign: "center", color: "#B573DC"}} />
         <section className="personal-section">
-          <Input placeholder="Nombre" labelText="Nombre" />
-          <Input placeholder="Apellido" labelText="Apellido" />
-          <Input placeholder="1234567" labelText="DNI" />
-          <Input type="tel" placeholder="123456789" labelText={`Telefono (+595)`} />
-        </section>
-        <hr /><br />  
-          <section className="direction-section">
-            <Select options={departamentsData} propertyOption="name" propertyValue="value"/>
-            <Input placeholder="Ciudad"/>
+          <Input placeholder="Juan" labelText="Nombre" id="nombre" name="nombre"/>
+          <Input placeholder="Perez" labelText="Apellido" id="apellido" name="apellido"/>  
+          <Input placeholder="Juan@example.com" labelText="Email" id="email" name="email"/>
+          <Input type="tel" placeholder="09XX-XXX-XXX" labelText= "Telefono" id="numeroTelefono" name="numeroTelefono"/>
           </section>
 
         <Button buttonText="Enviar" />
