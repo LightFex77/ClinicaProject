@@ -1,5 +1,6 @@
 import "../styles/home.css";
 import Footer from "./Footer";
+import ServicesSection from "./elements/ServicesSection";
 import SliderSection from "./elements/SliderSection";
 import SpecialistsSection from "./elements/SpecialistsSection";
 
@@ -14,6 +15,7 @@ const Home = () => {
               error, doloribus corporis odit eius ducimus!"
               buttonText="Consultar"
       />
+      <ServicesSection />
       <SpecialistsSection/>
       <Footer />
     </div>

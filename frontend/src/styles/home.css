@@ -1,34 +1,84 @@
-.section-slider-home{
-    padding-top: 6.25rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+.section-slider-home {
+  padding-top: 6.25rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-.section-images-slider{
-    overflow: hidden;
-    border-radius: 10px;
-    width: 60%;
-    height: 32rem;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    
+.section-images-slider {
+  overflow: hidden;
+  border-radius: 10px;
+  width: 60%;
+  height: 32rem;
+  display: flex;
+  justify-content: start;
+  align-items: center;
 }
-.section-text-slider{
-    padding: 0 60px;
-    background-color: #8C48A1;
-    height: 100%;
-    width: 35%;
-    text-align: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    gap: 5px;
+.section-text-slider {
+  padding: 0 60px;
+  background-color: #8c48a1;
+  height: 100%;
+  width: 35%;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  color: #ffff;
+}
+
+.services-section {
+    padding: 4rem 0;
+  background-color: #B573DC;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-info{
+    cursor: pointer;
+    border-top-left-radius: 2rem;
+    border-bottom-right-radius: 2rem;
     color: #ffff;
+    padding: 2rem;
+    background-color: #8c48a1;
+    width: 14rem;
+    height: 100%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }
-
-.specialists-section{
-    
+.card-info:hover{
+    box-shadow: 0 5px 20px #8C48A1;
+    background-color: #823c97;
 }
+.service-image{
+    height: 96px;
+    width: 96px;
+    border-radius: 100%;
+    border: 5px #B573DC solid;
+    background: url("../assets//images//oficina-dental.jpg");
+    background-size: 100% 100%;
+}
+.service-text{
+    height: 40%;
+    text-align: center;
+}
+/* .service-image {
+    overflow: hidden;
+  border-radius: 10px;
+  background: linear-gradient(to right, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
+    url("../assets//images//oficina-dental.jpg");
+  background-size: 100% 100%;
+  width: 16rem;
+  height: 24rem;
+}
+.card-info {
+    background-color: #8c48a1;
+    height: 60%;
+} */
