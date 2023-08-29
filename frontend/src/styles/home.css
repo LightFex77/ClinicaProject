@@ -1,0 +1,30 @@
+.section-slider-home{
+    padding-top: 6.25rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-images-slider{
+    overflow: hidden;
+    border-radius: 10px;
+    width: 60%;
+    height: 32rem;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    
+}
+.section-text-slider{
+    padding: 0 60px;
+    background-color: #8C48A1;
+    height: 100%;
+    width: 35%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 5px;
+    color: #ffff;
+}
