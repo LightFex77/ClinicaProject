@@ -1,0 +1,33 @@
+.nav-container{
+    background-color:#B573DC;
+}
+.nav-container ul{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+.nav-container ul li{
+    width: 100%;
+    list-style: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.nav-container ul li a {
+    text-decoration: none;
+    flex: 1;
+    text-align: center;
+    transition: background-color 0.3s;
+    padding: 1rem;
+    color: #ffff;
+}
+.nav-container ul li a:hover{
+    background-color:  #C091E8;
+    transition-delay: 0.1s;
+}
+
+.active-link{
+    color: red;
+    background-color: #A755A2;
+}
