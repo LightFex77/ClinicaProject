@@ -7,6 +7,8 @@
     align-items: center;
     justify-content: center;
     gap: 50px;
+    box-shadow: 1px;
+    box-shadow: 0 2px 10px #8C48A1;
 }
 .nav-container ul{
     height: 100%;
