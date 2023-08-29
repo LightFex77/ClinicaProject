@@ -10,29 +10,6 @@ const Register = () => {
   const sendFormRegister = (e) => {
     e.preventDefault();
   };
-
-  const departamentsData = [
-    { name: "Asunción", value: 1 },
-    { name: "Concepción", value: 2 },
-    { name: "San Pedro", value: 3 },
-    { name: "Cordillera", value: 4 },
-    { name: "Guairá", value: 5 },
-    { name: "Caaguazú", value: 6 },
-    { name: "Caazapá", value: 7 },
-    { name: "Itapúa", value: 8 },
-    { name: "Misiones", value: 9 },
-    { name: "Paraguarí", value: 10 },
-    { name: "Alto Paraná", value: 11 },
-    { name: "Central", value: 12 },
-    { name: "Ñeembucú", value: 13 },
-    { name: "Amambay", value: 14 },
-    { name: "Canindeyú", value: 15 },
-    { name: "Presidente Hayes", value: 16 },
-    { name: "Boquerón", value: 17 },
-    { name: "Alto Paraguay", value: 18 }
-  ];
-  
-  console.log(departamentsData);
   
   return (
     <div className="register-container">

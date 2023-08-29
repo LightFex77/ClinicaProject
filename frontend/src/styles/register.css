@@ -1,7 +1,7 @@
 .register-container{
     background: linear-gradient(to bottom, #E6E6FA, #D8BFD8);
     width: 30%;
-    padding: 1rem;
+    padding: 2rem;
     border-radius: 5px;
 }
 .register-container form{
@@ -11,10 +11,10 @@
 .register-container form section {      
     display: flex;
     flex-wrap: wrap;
-    justify-content: center;
+    gap: 5px;
 }
 .element-components{
-    width: 100%;
+    flex: 1;
     display: flex;
     flex-direction: column;
 }

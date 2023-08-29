@@ -1,5 +1,7 @@
 .nav-container{
     background-color:#B573DC;
+    width: 100%;
+    position: fixed;
 }
 .nav-container ul{
     display: flex;
