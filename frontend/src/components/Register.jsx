@@ -43,6 +43,8 @@ const Register = () => {
           <Input placeholder="Perez" labelText="Apellido" id="apellido" name="apellido"/>  
           <Input placeholder="Juan@example.com" labelText="Email" id="email" name="email"/>
           <Input type="tel" placeholder="09XX-XXX-XXX" labelText= "Telefono" id="numeroTelefono" name="numeroTelefono"/>
+          <Input labelText="Contraseña" placeholder="********"/>
+          <Input labelText="Repetir contraseña" placeholder="********"/>
           </section>
 
         <Button buttonText="Enviar" />
