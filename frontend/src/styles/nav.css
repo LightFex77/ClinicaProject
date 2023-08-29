@@ -31,3 +31,9 @@
     color: red;
     background-color: #A755A2;
 }
+
+
+.nav-container ul li img {
+    width: 32px;
+    height: 32px;
+}
