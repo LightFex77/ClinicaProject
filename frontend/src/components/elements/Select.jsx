@@ -1,19 +1,17 @@
 /* eslint-disable react/prop-types */
-const Select = ({ labelText, error, options }) => {
+const Select = ({ labelText, error, options, propertyOption, propertyValue, onChange }) => {
   return (
-    <div className="element-components">
-      <label htmlFor="selectElement">
+      <label htmlFor="selectElement" className="element-components">
         {labelText}
-        <select id="selectElement">
+        <select id="selectElement" onChange={onChange}>
           {options.map((option, index) => (
-            <option key={index} value={option.value}>
-              {option.text}
+            <option key={index} value={option[propertyValue]}>
+              {option[propertyOption]}
             </option>
           ))}
         </select>
         <span style={{ color: "red", height: "1rem" }}>{error}</span>
       </label>
-    </div>
   );
 };
 
