@@ -1,12 +1,12 @@
 .register-container{
     background: linear-gradient(to bottom, #E6E6FA, #D8BFD8);
     width: 30%;
+    padding: 1rem;
     border-radius: 5px;
 }
 .register-container form{
     display: flex;
     flex-direction: column;
-    padding: 1rem;
 }
 .register-container form section {      
     display: flex;
