@@ -1,6 +1,7 @@
 import "../styles/home.css";
 import Footer from "./Footer";
 import SliderSection from "./elements/SliderSection";
+import SpecialistsSection from "./elements/SpecialistsSection";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
               error, doloribus corporis odit eius ducimus!"
               buttonText="Consultar"
       />
+      <SpecialistsSection/>
       <Footer />
     </div>
   );
