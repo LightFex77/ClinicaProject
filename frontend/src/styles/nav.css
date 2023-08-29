@@ -2,16 +2,21 @@
     background-color:#B573DC;
     width: 100%;
     position: fixed;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    padding-left: 100px;
 }
 .nav-container ul{
     display: flex;
-    justify-content: space-around;
     align-items: center;
+    gap: 10px;
+    width: 50%;
+    height: 5rem;
 }
 .nav-container ul li{
-    width: 100%;
     list-style: none;
-
     display: flex;
     align-items: center;
     justify-content: center;
@@ -21,7 +26,8 @@
     flex: 1;
     text-align: center;
     transition: background-color 0.3s;
-    padding: 1rem;
+    padding: 10px 30px;
+    border-radius: 20px;
     color: #ffff;
 }
 .nav-container ul li a:hover{
@@ -34,8 +40,12 @@
     background-color: #A755A2;
 }
 
-
-.nav-container ul li img {
+.nav-logo-img{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+.nav-logo-img img {
     width: 32px;
     height: 32px;
 }

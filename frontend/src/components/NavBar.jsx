@@ -5,8 +5,8 @@ import logo from "../assets/pngwing.png"
 const NavBar = () => {
     return(
         <div className="nav-container">
+            <div className="nav-logo-img"><img src={logo}/>Miracles</div>
             <ul>
-                <li><img src={logo}/>Miracles</li>
                 <li><NavLink className={({isActive}) => isActive ? "active-link" : ""} to="/">Inicio</NavLink></li>
                 <li><NavLink className={({isActive}) => isActive ? "active-link" : ""} to="/specialists">Especialistas</NavLink></li>
                 <li><NavLink className={({isActive}) => isActive ? "active-link" : ""} to="/services">Servcios</NavLink></li>
