@@ -1,5 +1,6 @@
 import Register from "./components/Register";
 import Login from "./components/Login";
+import Home from "./components/Home"
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 
 const App = () => {
@@ -12,6 +13,7 @@ const App = () => {
       <Route path="/login" element={<div className="clinic-container">
       <Login/>
     </div>}/>
+    <Route path= "/" element = {<Home />} />
     </Routes>
     </BrowserRouter>
   )
