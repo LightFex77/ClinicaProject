@@ -4,6 +4,14 @@
     padding: 2rem;
     border-radius: 5px;
 }
+
+.link-register{
+    display: flex;
+    justify-content: center;
+}
+.link-register a {
+    text-decoration: none;
+}
 .register-container form{
     display: flex;
     flex-direction: column;
