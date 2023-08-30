@@ -3,7 +3,7 @@ import Footer from "./Footer";
 import ServicesSection from "./elements/ServicesSection";
 import HeaderBody from "../components/elements/HeaderBody";
 import Button from "../components/elements/Button";
-import SpecialistsSection from "./elements/SpecialistsSection";
+// import SpecialistsSection from "./elements/SpecialistsSection";
 
 const Home = () => {
   return (
@@ -22,7 +22,7 @@ const Home = () => {
         </div>
       </section>
       <ServicesSection />
-      <SpecialistsSection/>
+      {/* <SpecialistsSection/> */}
       <Footer />
     </div>
   );
