@@ -11,7 +11,9 @@ const ServicesSection = () => {
 
   return (
     <section className="services-section">
-      <HeaderBody h1Text="Servicios" style={{ fontSize: "2rem" }} />
+      <div className='title-text-service'>
+      <HeaderBody h1Text="Servicios" hr={true} style={{ fontSize: "2rem" }} />
+      </div>
 
       <div className="cards-services">
         {data.slice(0, servicesToShow).map((item, index) => (

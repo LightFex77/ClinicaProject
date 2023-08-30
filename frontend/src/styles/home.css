@@ -32,10 +32,13 @@
 
 /* Apartado de servicios */
 
+.title-text-service{
+  background-color: #8c48a1;
+  width: 100%;
+}
+
 .services-section {
-  overflow: hidden;
-  padding: 2rem 0;
-  background-color: #b573dc;
+  overflow: hidden; 
   height: 100%;
   width: 100%;
   display: flex;
@@ -44,8 +47,12 @@
   text-align: center;
   gap: 1rem;
   color: #ffff;
+  align-items: center;
 }
 .cards-services {
+  border-radius: 5px;
+  width: 90%;
+  background-color: #b573dc;
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
@@ -53,11 +60,12 @@
   padding: 0 20px 0;
 }
 .card-info {
+  margin: 10px;
   padding: 20px;
   cursor: pointer;
   border-top-left-radius: 2rem;
   border-bottom-right-radius: 2rem;
-  background: linear-gradient(#8c48a1, #8c48a1);
+  background-color:#8c48a1;
   width: 20rem;
   height: 100%;
   display: flex;
@@ -66,12 +74,11 @@
   align-items: center;
   justify-content: center;
   border-bottom: #b573dc solid;
-  box-shadow: 0 5px 20px #8c48a1;
   transition: border-bottom, box-shadow, linear 0.2s;
 }
 .card-info:hover {
-  border-bottom: #be9ddb solid;
-  box-shadow: 0 40px 20px #8c48a1;
+  border-bottom: #b573dc solid;
+  box-shadow: 0 5px 20px #8c48a1;
   transition-delay: 0.2s;
 }
 .service-image {
