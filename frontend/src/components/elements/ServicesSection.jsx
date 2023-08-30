@@ -1,19 +1,32 @@
-import HeaderBody from "./HeaderBody"
+import  { useState } from 'react';
+import HeaderBody from "./HeaderBody";
+import ServicesCards from "./ServicesCards";
+import { data } from "../../data";
 
 const ServicesSection = () => {
+  const [showAllServices, setShowAllServices] = useState(false);
+
+  // Controla cuántos servicios mostrar
+  const servicesToShow = showAllServices ? data.length : 3;
+
   return (
     <section className="services-section">
-      <div className="card-info">
-      <div className="service-image">
-        </div>
-        <HeaderBody h1Text="Ortodoncia"/>
-      <div className="service-text">
-      <p>
-            Lorem ipsum dolor sit, amet consectetur adipisicing elit. Similique
-            distinctio fugit cum, eum consequuntur quidem modi?
-          </p>
+      <HeaderBody h1Text="Servicios" style={{ fontSize: "2rem" }} />
+
+      <div className="cards-services">
+        {data.slice(0, servicesToShow).map((item, index) => (
+          <ServicesCards
+            key={index}
+            titleText={item.title}
+            image={item.imageUrl}
+          />
+        ))}
       </div>
-      </div>
+
+      {/* Botón para alternar entre "Ver Más" y "Ver Menos" */}
+      <button onClick={() => setShowAllServices(!showAllServices)}>
+        {showAllServices ? 'Ver Menos' : 'Ver Más'}
+      </button>
     </section>
   );
 };

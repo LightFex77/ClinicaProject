@@ -41,7 +41,7 @@
 }
 
 .active-link{
-    background-color: #A755A2;
+    background-color: #b462af;
 }
 
 .nav-logo-img{
@@ -53,7 +53,7 @@
     align-items: center;
     justify-content: center;
     gap: 5px;
-    background-color: #A755A2;
+    background-color: #b462af;
 }
 .nav-logo-img img {
     width: 32px;

@@ -1,5 +1,6 @@
 .register-container{
-    background: linear-gradient(to bottom, #E6E6FA, #D8BFD8);
+    color: #ffff;
+    background-color: #8c48a1;
     width: 30%;
     padding: 2rem;
     border-radius: 5px;
@@ -10,6 +11,7 @@
 }
 .link-register a {
     text-decoration: none;
+    color: #ffff;
 }
 .register-container form{
     display: flex;
@@ -31,13 +33,13 @@
 }
 .element-components button {
     padding: 1rem;
-    background-color: #B573DC;
+    background-color: #b462af;
     color: #ffff;
     border: 0;
     cursor: pointer;
     transition: background-color 0.3s;
 }
 .element-components button:hover{
-    background-color: #A755A2;
+    background-color: #C091E8;
     transition-delay: 0.1s;
 }

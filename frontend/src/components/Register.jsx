@@ -14,7 +14,7 @@ const Register = () => {
   return (
     <div className="register-container">
       <form onSubmit={sendFormRegister}>
-      <HeaderBody h1Text="Registrate" style={{ textAlign: "center", color: "#B573DC"}} />
+      <HeaderBody h1Text="Registrate" style={{ textAlign: "center", color: "#ffff"}} />
         <section className="personal-section">
           <Input placeholder="Juan" labelText="Nombre" id="nombre" name="nombre"/>
           <Input placeholder="Perez" labelText="Apellido" id="apellido" name="apellido"/>  

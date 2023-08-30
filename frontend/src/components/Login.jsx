@@ -6,7 +6,7 @@ import {Link} from "react-router-dom"
 const Login = () => {
     return(
         <div className="register-container">
-            <HeaderBody h1Text="Iniciar Sesion" style={{textAlign: "center", color: "#B573DC"}}/>
+            <HeaderBody h1Text="Iniciar Sesion" style={{textAlign: "center", color: "#ffff"}}/>
             <form>
                 <Input placeholder="Telefono o email" labelText="Usuario" id="nombre"/>
                 <Input placeholder="**********" labelText="Contraseña" id="contraseña"/>
