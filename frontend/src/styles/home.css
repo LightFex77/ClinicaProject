@@ -8,8 +8,8 @@
 .section-images-slider {
   overflow: hidden;
   border-radius: 10px;
-  width: 60%;
-  height: 32rem;
+  width: 90%;
+  height: 40rem;
   display: flex;
   justify-content: start;
   align-items: center;
@@ -18,6 +18,7 @@
   background-size: 100% 100%;
 }
 .section-text-slider {
+  font-size: 1.2rem;
   padding: 0 60px;
   background-color: #8c48a1;
   height: 100%;
@@ -26,7 +27,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 5px;
+  gap: 10px;
   color: #ffff;
 }
 
@@ -57,7 +58,6 @@
   flex-wrap: wrap;
   gap: 20px;
   justify-content: center;
-  padding: 0 20px 0;
 }
 .card-info {
   margin: 10px;
