@@ -7,6 +7,7 @@ const Services = () => {
         <div className="services-container">
           <div className="services-container-title">
             <h1>Servicios</h1>
+            <hr />
           </div>
           <section className="services-section">
             {data.map((item, index) => (

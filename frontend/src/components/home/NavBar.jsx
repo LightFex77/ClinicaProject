@@ -7,9 +7,9 @@ const NavBar = () => {
   return (
     <nav className="nav-container">
       <NavLink className={({isActive}) => classChange(isActive)} to="/">Inicio</NavLink>
-      <NavLink className={({isActive}) => classChange(isActive)} to="/services">Servicios</NavLink>
-      <NavLink className={({isActive}) => classChange(isActive)} to="/consult">Consultar</NavLink>
-      <NavLink className={({isActive}) => classChange(isActive)} to="/login">Iniciar Sesion</NavLink>
+      <NavLink className={({isActive}) => classChange(isActive)} to="/consultas">Consultas</NavLink>
+      <NavLink className={({isActive}) => classChange(isActive)} to="/acerca-de">Acerca de</NavLink>
+      <NavLink className={({isActive}) => classChange(isActive)} to="/iniciar-sesion">Iniciar Sesion</NavLink>
     </nav>
   )
 }
