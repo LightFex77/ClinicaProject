@@ -1,0 +1,73 @@
+/* Header */
+
+.top-page{
+    position: fixed;
+    width: 100%;
+    top: 0;
+    box-shadow: 0 2px 10px #4b1c71;
+}
+.header-container{
+    display: flex;
+    align-items: center;
+    padding-left: 2rem;
+    background-color: #7f4ca5;
+}
+.header-logo{
+    display: flex;
+    align-items: center;
+    height: 4rem;
+    font-size: 1.5rem; 
+    color: #ffff;
+    display: flex;
+    flex-direction: row-reverse;
+}
+.header-logo img{
+    width: 48px;
+    height: 48px;
+}
+
+/* Nav */
+
+.nav-container{
+    display: flex;
+    justify-content: center;
+    align-items: start;
+    height: 1.8rem;
+    gap: 2rem;
+    background-color: #b57edc;
+}
+.nav-container a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    text-decoration: none;
+    font-size: 1rem;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+.active-link{
+    background-color: #4b1c71;
+    height: 3rem;
+    color: #ffff;
+    transition: height 0.2s;
+}
+.active-link:hover{
+    background-color: #4b1c71;
+}
+.inactive-link{
+    color: #dbb6ee;
+    background-color: #7f4ca5;
+    height: 100%;
+    transition: color 0.2s, height 0.2s, background-color 0.2s;
+}
+.inactive-link:hover{
+    cursor: pointer;
+    height: 2.2rem;
+    background-color: #4b1c71;
+    color: #ffff;
+}
+
+
+
+

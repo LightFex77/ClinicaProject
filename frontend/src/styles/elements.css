@@ -1,0 +1,18 @@
+.element-components{
+    display: flex;
+}
+/* Botones */
+.element-components button{
+    padding: 1rem 3rem;
+    background-color: #4b1c71;
+    border: 0;
+    cursor: pointer;
+    color: #dbb6ee;
+    flex: 1;
+    transition: background-color 0.2s, color 0.2s;
+}
+.element-components button:hover{
+    color: #ffff;
+    background-color: #b57edc;
+    transition: background-color 0.2s, color 0.2;
+}

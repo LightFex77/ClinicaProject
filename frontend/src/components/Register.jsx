@@ -1,6 +1,6 @@
 import Input from "./elements/Input";
 import Button from "./elements/Button";
-import "../styles/register.css";
+// import "../styles/register.css";
 import HeaderBody from "./elements/HeaderBody";
 // import {useEffect, useState} from "react";
 
