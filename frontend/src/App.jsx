@@ -4,10 +4,9 @@ import Home from "./components/home/Main"
 import {BrowserRouter, Route, Routes} from "react-router-dom";
 import Header from "./components/home/Header";
 import Footer from "./components/home/Footer";
+import Consults from "./components/consults/Consults";
 import "./styles/elements.css";
-import "./styles/sideMenu.css";
-import Services from "./components/section-services/Services";
-import SideMenu from "./components/section-services/SideMenu";
+import "./styles/consults.css";
 
 const App = () => {
   return (
@@ -20,9 +19,8 @@ const App = () => {
       <Route path="/iniciar-sesion" element={<div className="clinic-container">
       <Login/>
     </div>}/>
-    <Route path="/consultas" element={
-    <div className="consults-container"><SideMenu/><Services /></div>} />
     <Route path= "/" element = {<Home />} />
+    <Route path="/consultas" element = {<Consults />}/>
     </Routes>
     <Footer />
     </BrowserRouter>
