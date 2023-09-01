@@ -19,15 +19,18 @@ const registerServices = async (
   return result.rows;
 };
 
-const getUsers = async () => {
+const checkUserExists = async (email, phone_number) => {
   const query = `
-    SELECT id, name, last_name, email, phone_number, rol, password
-	FROM public.users;
-    `;
-  const result = await connection.query(query);
+  SELECT id, name, last_name, email, phone_number, rol, password
+  FROM public.users
+  WHERE email = $1 OR phone_number = $2;
+  `
+  const values = [email, phone_number];
 
-  return result.rows;
-};
+  const result = await connection.query(query, values);
+
+  return result.rows[0]
+}
 
 const loginServices = async (user, password) => {
   const query = `
@@ -44,6 +47,6 @@ const loginServices = async (user, password) => {
 
 module.exports = {
   registerServices,
-  getUsers,
   loginServices,
+  checkUserExists
 };
