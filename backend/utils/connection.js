@@ -1,7 +1,7 @@
 const pg = require("pg");
 
 const connection = new pg.Pool({
-    user: "postgress",
+    user: "postgres",
     host: "localhost",
     database: "clinicaProject",
     password: "admin123",
