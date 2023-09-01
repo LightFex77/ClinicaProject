@@ -6,6 +6,7 @@
 }
 .header-container{
     display: flex;
+    justify-content: space-between;
     align-items: center;
     padding-left: 2rem;
     background-color: #7f4ca5;
@@ -63,6 +64,24 @@
     color: #ffff;
 }
 
+/* Iniciar sesion */
+.header-btn{
+    height: 4rem;
+    align-items: center;
+    display: flex;
+    gap: 1rem;
+    padding: 0 1rem;
+}
+
+.header-btn label{
+    height: 2.5rem;
+    width: 6rem;
+}
+
+.header-btn label button{
+    padding: 0;
+    border-radius: 5px;
+}
 
 
 
