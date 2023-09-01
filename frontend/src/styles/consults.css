@@ -1,0 +1,83 @@
+.consults-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+}
+.consults-table{
+    border-collapse: collapse;
+    width: 80%;
+}
+.consults-table td {
+    padding: 5px 20px;
+    text-align: center;
+}
+.consults-table-title{
+    background-color: #7f4ca5;
+    height: 50px;
+    border-bottom: 1px #b57edc solid;
+}
+td:nth-child(even){
+    background-color: #7f4ca5;
+    border-bottom: 1px #b57edc solid;
+    color: #ffff;
+}
+td:nth-child(odd){
+    background-color: #b57edc;
+    border-bottom: 1px #7f4ca5 solid;
+    color: #ffff;
+}
+.consults-buttons{
+    display: flex;
+    gap: 5px;
+}
+.consults-buttons button{
+    padding: 0;
+    width: 5rem;
+    height: 2rem;
+}
+.btn-profile{
+    background-color: #4b1c71;
+    border: 0;
+    color: #dbb6ee;
+    transition: background-color 0.2s, color 0.2s;
+}
+.btn-program{
+    background-color: #ffff;
+    color: black;
+    border: 0;
+    transition: background-color 0.2s, color 0.2s;
+}
+.btn-profile:hover{
+    transition: background-color 0.2s, color 0.2s;
+    background-color: #7f4ca5;
+    color: #ffff;
+}
+.btn-program:hover{
+    transition: background-color 0.2s, color 0.2s;
+    background-color: #dbb6ee;
+    color: #ffff;
+}
+
+
+.consults-filter{
+    background-color: #4b1c71;
+    height: 4rem;
+    width: 80%;
+}
+
+.consults-filter-change{
+    display: flex;
+    justify-content: start;
+    padding: 20px 0;
+    gap: 5px;
+    /* background-color: #7f4ca5; */
+    width: 80%;
+}
+/* .consults-filter-change label {
+} */
+.consults-filter-change button{
+    border-radius: 5px;
+    background-color: #7f4ca5;
+    color: #ffff;
+}
