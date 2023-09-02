@@ -37,3 +37,26 @@ export const register = async (name, last_name, email, password, phone_number) =
     }
   };
   
+export const login = async (user, password) => {
+  const userData = {
+    user: user,
+    password: password
+  }
+
+  const response = await fetch("http://localhost:3000/login-access", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify(userData)
+  })
+  if(response.status === 200){
+    console.log("Uusario encontrado")
+  }else if(response.status === 400){
+    console.log("Contraseña incorrecta")
+  }else if(response.status === 404){
+    console.log("El usuario no existe")
+  }else{
+    console.log("Se produjo un error durante el inicio de sesion")
+  }
+}

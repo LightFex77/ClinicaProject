@@ -1,4 +1,8 @@
-const { registerServices, loginServices, checkUserExists } = require("../services/users.service");
+const {
+  registerServices,
+  loginServices,
+  checkUserExists,
+} = require("../services/users.service");
 
 const registerController = async (req, res) => {
   const { name, last_name, email, phone_number, rol, password } = req.body;
@@ -36,19 +40,32 @@ const registerController = async (req, res) => {
   }
 };
 
+const loginController = async (req, res) => {
+  const { user, password } = req.body;
 
-const loginController = async(req, res) => {
-    const {user, password} = req.body;
+  const validateUser = await checkUserExists(user, user);
+  const result = await loginServices(user, password);
 
-    const result = await loginServices(user, password);
-
-    res.status(200).json({
-        user: result
+  if (!validateUser) {
+    return res.status(404).json({
+      error: "El usuario no existe",
     });
-
-}
+  } else if (validateUser.password !== password) {
+    return res.status(400).json({
+      error: "Contraseña incorrecta",
+    });
+  } else if (result) {
+    res.status(200).json({
+      user: result,
+    });
+  } else {
+    return res.status(500).json({
+      error: "Se produjo un error durante el inicio de sesion",
+    });
+  }
+};
 
 module.exports = {
   registerController,
-  loginController
+  loginController,
 };
