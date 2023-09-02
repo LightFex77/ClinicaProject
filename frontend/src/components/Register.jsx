@@ -5,10 +5,12 @@ import Button from "./elements/Button";
 import HeaderBody from "./elements/HeaderBody";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import {register} from "../utils/usersLogin";
+import { register } from "../utils/usersLogin";
+import { useState } from "react";
 // import {useEffect, useState} from "react";
 
 const Register = ({ setShowRegister }) => {
+  const [response, setResponse] = useState(null);
 
   const formik = useFormik({
     initialValues: {
@@ -16,24 +18,33 @@ const Register = ({ setShowRegister }) => {
       lastName: "",
       password: "",
       email: "",
-      phoneNumber: ""
+      phoneNumber: "",
     },
     validationSchema: Yup.object({
       name: Yup.string().required("Nombre requerido"),
       lastName: Yup.string().required("Apellido requerido"),
       password: Yup.string().required("Contraseña requerida"),
-      email: Yup.string().email("El email no es valido").required("Email requerido"),
+      email: Yup.string()
+        .email("El email no es valido")
+        .required("Email requerido"),
       phoneNumber: Yup.string().required("Telefono requerido"),
     }),
-    onSubmit: async ({name, lastName, email, password, phoneNumber}) =>{
-      try{
-        await register(name, lastName, email, password, phoneNumber, setShowRegister )
-      } catch(error){
-        alert("Error al registrarse")
+    onSubmit: async ({ name, lastName, email, password, phoneNumber }) => {
+      try {
+        const registerResponse = await register(
+          name,
+          lastName,
+          email,
+          password,
+          phoneNumber
+        );
+        setResponse(registerResponse);
+        registerResponse.status === 200 && setShowRegister(false);
+      } catch (error) {
+        alert("Error al registrarse");
       }
-    }
+    },
   });
-
 
   return (
     <div className="register-container">
@@ -86,10 +97,19 @@ const Register = ({ setShowRegister }) => {
           />
         </section>
 
-        <div className="register-btn" >
-        <Button buttonText="Enviar"/>
-          <Button buttonText="Cancelar" onClick={() => setShowRegister(false)} />
+        <div className="register-btn">
+          <Button buttonText="Enviar"/>
+          <Button
+            buttonText="Cancelar"
+            onClick={() => setShowRegister(false)}
+          />
         </div>
+
+        {response && (response.status === 400 ? (
+          <p>El email o numero de telefono ya existe</p>
+        ) : (
+          <p>Se produjo un error inesperado en el servidor</p>
+        ))}
       </form>
     </div>
   );
