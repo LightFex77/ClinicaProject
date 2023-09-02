@@ -8,7 +8,8 @@ import * as Yup from "yup";
 import {register} from "../utils/usersLogin";
 // import {useEffect, useState} from "react";
 
-const Register = ({ exitModal }) => {
+const Register = ({ setShowRegister }) => {
+
   const formik = useFormik({
     initialValues: {
       name: "",
@@ -24,10 +25,9 @@ const Register = ({ exitModal }) => {
       email: Yup.string().email("El email no es valido").required("Email requerido"),
       phoneNumber: Yup.string().required("Telefono requerido"),
     }),
-    onSubmit: async (formData) =>{
+    onSubmit: async ({name, lastName, email, password, phoneNumber}) =>{
       try{
-        await register(formData.name, formData.lastName, formData.email, formData.password, formData.phoneNumber )
-        await exitModal
+        await register(name, lastName, email, password, phoneNumber, setShowRegister )
       } catch(error){
         alert("Error al registrarse")
       }
@@ -87,8 +87,8 @@ const Register = ({ exitModal }) => {
         </section>
 
         <div className="register-btn" >
-          <Button buttonText="Enviar" />
-          <Button buttonText="Cancelar" onClick={exitModal} />
+        <Button buttonText="Enviar"/>
+          <Button buttonText="Cancelar" onClick={() => setShowRegister(false)} />
         </div>
       </form>
     </div>

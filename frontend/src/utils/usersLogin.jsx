@@ -1,4 +1,4 @@
-export const register = async (name, last_name, email, password, phone_number) => {
+export const register = async (name, last_name, email, password, phone_number, setShowRegister) => {
     const user = {
       name: name,
       last_name: last_name,
@@ -20,6 +20,8 @@ export const register = async (name, last_name, email, password, phone_number) =
       if (response.status === 200) {
         // El registro fue exitoso
         console.log("Registro exitoso.");
+        setShowRegister(false);
+        
         // Puedes realizar otras acciones aquí, como redireccionar a la página de inicio de sesión.
       } else if (response.status === 400) {
         // Hubo un error en los datos proporcionados por el usuario.
@@ -37,7 +39,7 @@ export const register = async (name, last_name, email, password, phone_number) =
     }
   };
   
-export const login = async (user, password) => {
+export const login = async (user, password, setShowLogin) => {
   const userData = {
     user: user,
     password: password
@@ -52,6 +54,7 @@ export const login = async (user, password) => {
   })
   if(response.status === 200){
     console.log("Uusario encontrado")
+    setShowLogin(false)
   }else if(response.status === 400){
     console.log("Contraseña incorrecta")
   }else if(response.status === 404){

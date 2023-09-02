@@ -7,7 +7,7 @@ import { useFormik } from "formik";
 import * as Yup from "yup";
 
 // eslint-disable-next-line react/prop-types
-const Login = ({ exitModal }) => {
+const Login = ({ setShowLogin }) => {
   const formik = useFormik({
     initialValues: {
       user: "",
@@ -15,14 +15,13 @@ const Login = ({ exitModal }) => {
     },
     validationSchema: Yup.object({
       user: Yup.string().required("Usuario requerido"),
-      password: Yup.string().required("Constraseña requerida")
+      password: Yup.string().required("Constraseña requerida"),
     }),
-    onSubmit: async (formData) =>{
-      try{
-        await exitModal
-        await login(formData.user, formData.password)
-      } catch(error){
-        alert("Error al inicar sesion")
+    onSubmit: async ({user, password}) => {
+      try {
+        await login(user, password, setShowLogin);
+      } catch (error) {
+        alert("Error al inicar sesion");
       }
     },
   });
@@ -51,8 +50,8 @@ const Login = ({ exitModal }) => {
           error={formik.errors.password}
         />
         <div className="register-btn">
-          <Button buttonText="Enviar"/>
-          <Button buttonText="Cancelar" onClick={exitModal} />
+          <Button buttonText="Enviar" />
+          <Button buttonText="Cancelar" onClick={() => setShowLogin(false)} />
         </div>
 
         <span className="link-register">
