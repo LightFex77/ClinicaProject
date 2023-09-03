@@ -1,3 +1,5 @@
+import Button from "../elements/Button";
+
 /* eslint-disable react/prop-types */
 // eslint-disable-next-line react/prop-types
 const ConsultsFilter = ({ setSelectOption, toLookFor, handleFilterChange, dentists }) => {
@@ -21,6 +23,9 @@ const ConsultsFilter = ({ setSelectOption, toLookFor, handleFilterChange, dentis
         </option>
       ))}
     </select>
+    <span className="consults-filter-change">
+        <Button buttonText="Ver mis citas"/>
+      </span>
   </div>
   );
 };

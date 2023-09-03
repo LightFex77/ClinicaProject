@@ -2,7 +2,6 @@ import { useState } from "react";
 import { dentists } from "../../dentists";
 import ConsultsFilter from "./ConsultsFilter";
 import ConsultsTableProgram from "./ConsultsTableProgram";
-import Button from "../../components/elements/Button";
 // import {Link} from "react-router-dom";
 
 const Consults = () => {
@@ -34,9 +33,6 @@ const Consults = () => {
 
   return (
     <div className="consults-container">
-      <span className="consults-filter-change">
-        <Button buttonText="Consultar"/> <Button buttonText="Mis consultas"/>
-      </span>
       <ConsultsFilter
         setSelectOption={setSelectOption}
         toLookFor={toLookFor}
