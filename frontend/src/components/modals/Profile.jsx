@@ -1,0 +1,11 @@
+const Profile = () => {
+  return (
+    <div className="modal-container-consults">
+        <form className="modal-consults-g">
+            
+        </form>
+    </div>
+  )
+}
+
+export default Profile
