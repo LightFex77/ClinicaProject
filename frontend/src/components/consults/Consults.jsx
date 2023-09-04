@@ -2,9 +2,6 @@ import { useState } from "react";
 import { dentists } from "../../dentists";
 import ConsultsFilter from "./ConsultsFilter";
 import ConsultsTableProgram from "./ConsultsTableProgram";
-import Profile from "../modals/Profile";
-import Schedule from "../modals/Schedule";
-import MyQueries from "../modals/MyQueries";
 // import {Link} from "react-router-dom";
 
 const Consults = () => {
@@ -36,9 +33,6 @@ const Consults = () => {
 
   return (
     <div className="consults-container">
-      <Profile />
-      <Schedule />
-      <MyQueries />
       <ConsultsFilter
         setSelectOption={setSelectOption}
         toLookFor={toLookFor}

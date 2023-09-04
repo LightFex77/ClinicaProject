@@ -1,8 +1,18 @@
 /* eslint-disable react/prop-types */
+
+import { useState } from "react"
+import Profile from "../modals/Profile";
+import Schedule from "../modals/Schedule";
+
 // eslint-disable-next-line react/prop-types
 const ConsultsTableProgram = ({filteredDentists}) => {
+  const[showProfile, setShowProfile] = useState(false);
+  const[showSchedule, setShowSchedule] = useState(false);
+
   return (
     <table className="consults-table">
+      {showProfile ? <Profile /> : null}
+      {showSchedule ? <Schedule />: null}
         <thead>
           <tr className="consults-table-title">
             <th>Nombre</th>
@@ -22,8 +32,8 @@ const ConsultsTableProgram = ({filteredDentists}) => {
               <td>
                 {item.photo}
                 <span className="consults-buttons">
-                  <button className="btn-profile">Ver perfil</button>
-                  <button className="btn-program">Agendar</button>
+                  <button className="btn-profile" onClick={() => setShowProfile(true)}>Ver perfil</button>
+                  <button className="btn-program" onClick={() => setShowSchedule(true)}>Agendar</button>
                 </span>
               </td>
             </tr>
