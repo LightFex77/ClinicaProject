@@ -1,4 +1,4 @@
-import { dentists } from "../../data";
+import { dentists } from "../../../data";
 
 // eslint-disable-next-line react/prop-types
 const Profile = ({ id }) => {
@@ -11,12 +11,16 @@ const Profile = ({ id }) => {
           <h1>{dentist.name}</h1>
           <img src={dentist.photo} alt="" />
           <h2>{dentist.specialty}</h2>
-          <h2>{dentist.studies.map((study, index) => (
-            <ul key={index} style={{listStyle: "none"}}>
-              <li>{study}</li>
-            </ul>
-          ))}</h2>
-          <h2>{dentist.location} {dentist.address}</h2>
+          <h2>
+            {dentist.studies.map((study, index) => (
+              <ul key={index} style={{ listStyle: "none" }}>
+                <li>{study}</li>
+              </ul>
+            ))}
+          </h2>
+          <h2>
+            {dentist.location} {dentist.address}
+          </h2>
         </div>
         <div className="profile-desciption">
           <p>{dentist.description}</p>

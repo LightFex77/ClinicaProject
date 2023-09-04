@@ -1,9 +1,9 @@
-import "../../styles/headerNav.css";
-import image from "../../assets/images/pngwing.png";
+import "../../../styles/headerNav.css";
+import image from "../../../assets/images/pngwing.png";
 import NavBar from "./NavBar";
-import Button from "../elements/Button";
+import Button from "../../elements/Button";
 import { useState } from "react";
-import { showLogin, showRegister } from "../../utils/showLogins";
+import { showLogin, showRegister } from "../../../utils/showLogins";
 
 const Header = () => {
 

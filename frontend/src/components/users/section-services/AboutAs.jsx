@@ -1,5 +1,5 @@
-import "../../styles/aboutAs.css";
-import Button from "../elements/Button"
+import "../../../styles/aboutAs.css";
+import Button from "../../elements/Button"
 
 // eslint-disable-next-line react/prop-types
 const AboutAs = ({ aboutText, aboutTitle, aboutUrlImage }) => {

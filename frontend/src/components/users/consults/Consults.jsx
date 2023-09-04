@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { dentists } from "../../data";
+import { dentists } from "../../../data";
 import ConsultsFilter from "./ConsultsFilter";
 import ConsultsTableProgram from "./ConsultsTableProgram";
 // import {Link} from "react-router-dom";

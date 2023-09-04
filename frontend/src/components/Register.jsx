@@ -1,11 +1,11 @@
 /* eslint-disable react/prop-types */
-import Input from "../elements/Input";
-import Button from "../elements/Button";
+import Input from "./elements/Input";
+import Button from "./elements/Button";
 // import "../styles/register.css";
-import HeaderBody from "../elements/HeaderBody";
+import HeaderBody from "./elements/HeaderBody";
 import { useFormik } from "formik";
 import * as Yup from "yup";
-import { register } from "../../utils/usersLogin";
+import { register } from "../utils/usersLogin";
 import { useState } from "react";
 // import {useEffect, useState} from "react";
 

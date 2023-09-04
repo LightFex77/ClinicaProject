@@ -1,5 +1,5 @@
 import { useState } from "react";
-import Button from "../elements/Button";
+import Button from "../../elements/Button";
 import MyQueries from "../modals/MyQueries";
 
 /* eslint-disable react/prop-types */

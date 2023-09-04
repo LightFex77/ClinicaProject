@@ -1,6 +1,6 @@
-import "../../styles/homeContent.css";
-import HeaderBody from "../elements/HeaderBody";
-import Button from "../elements/Button";
+import "../../../styles/homeContent.css";
+import HeaderBody from "../../elements/HeaderBody";
+import Button from "../../elements/Button";
 import AboutAs from "../section-services/AboutAs";
 
 const Main = () => {
