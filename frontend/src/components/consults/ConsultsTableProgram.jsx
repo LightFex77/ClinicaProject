@@ -8,10 +8,16 @@ import Schedule from "../modals/Schedule";
 const ConsultsTableProgram = ({filteredDentists}) => {
   const[showProfile, setShowProfile] = useState(false);
   const[showSchedule, setShowSchedule] = useState(false);
+  const[profileId, setProfileId] = useState(null);
+
+  const getProfile = (id) => {
+    setShowProfile(true)
+    setProfileId(id);
+  }
 
   return (
     <table className="consults-table">
-      {showProfile ? <Profile /> : null}
+      {showProfile ? <Profile id={profileId}/> : null}
       {showSchedule ? <Schedule />: null}
         <thead>
           <tr className="consults-table-title">
@@ -32,7 +38,7 @@ const ConsultsTableProgram = ({filteredDentists}) => {
               <td>
                 {item.photo}
                 <span className="consults-buttons">
-                  <button className="btn-profile" onClick={() => setShowProfile(true)}>Ver perfil</button>
+                  <button className="btn-profile" onClick={() => getProfile(item.id)}>Ver perfil</button>
                   <button className="btn-program" onClick={() => setShowSchedule(true)}>Agendar</button>
                 </span>
               </td>

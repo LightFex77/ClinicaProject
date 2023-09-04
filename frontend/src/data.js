@@ -40,6 +40,7 @@ export const data = [
 
   export const dentists = [
     {
+      id: 1,
       name: "Dr. John Smith",
       specialty: "Orthodontics",
       location: "City A",
@@ -50,6 +51,7 @@ export const data = [
       studies: ["Orthodontics Study 1", "Orthodontics Study 2"]
     },
     {
+      id: 2,
       name: "Dr. Sarah Johnson",
       specialty: "Dental Implants",
       location: "City B",
@@ -60,6 +62,7 @@ export const data = [
       studies: ["Dental Implants Study 1", "Dental Implants Study 2"]
     },
     {
+      id: 3,
       name: "Dr. Michael Davis",
       specialty: "Oral Surgery",
       location: "City C",
@@ -70,6 +73,7 @@ export const data = [
       studies: ["Oral Surgery Study 1", "Oral Surgery Study 2"]
     },
     {
+      id: 4,
       name: "Dr. Emily Brown",
       specialty: "Pediatric Dentistry",
       location: "City D",
@@ -80,6 +84,7 @@ export const data = [
       studies: ["Pediatric Dentistry Study 1", "Pediatric Dentistry Study 2"]
     },
     {
+      id: 5,
       name: "Dr. Robert Turner",
       specialty: "Cosmetic Dentistry",
       location: "City E",
@@ -90,6 +95,7 @@ export const data = [
       studies: ["Cosmetic Dentistry Study 1", "Cosmetic Dentistry Study 2"]
     },
     {
+      id: 6,
       name: "Dra. Lisa White",
       specialty: "General Dentistry",
       location: "City F",
@@ -100,6 +106,7 @@ export const data = [
       studies: ["General Dentistry Study 1", "General Dentistry Study 2"]
     },
     {
+      id: 7,
       name: "Dr. James Lee",
       specialty: "Endodontics",
       location: "City G",
@@ -110,6 +117,7 @@ export const data = [
       studies: ["Endodontics Study 1", "Endodontics Study 2"]
     },
     {
+      id: 8,
       name: "Dra. Laura Miller",
       specialty: "Periodontics",
       location: "City H",
@@ -120,6 +128,7 @@ export const data = [
       studies: ["Periodontics Study 1", "Periodontics Study 2"]
     },
     {
+      id: 9,
       name: "Dr. Andrew Clark",
       specialty: "Prosthodontics",
       location: "City I",
@@ -130,6 +139,7 @@ export const data = [
       studies: ["Prosthodontics Study 1", "Prosthodontics Study 2"]
     },
     {
+      id: 10,
       name: "Dr. Jennifer Hall",
       specialty: "Oral and Maxillofacial Surgery",
       location: "City J",
@@ -140,6 +150,7 @@ export const data = [
       studies: ["Oral and Maxillofacial Surgery Study 1", "Oral and Maxillofacial Surgery Study 2"]
     },
     {
+      id: 11,
       name: "Dr. Daniel Martin",
       specialty: "Dental Hygiene",
       location: "City K",
@@ -150,6 +161,7 @@ export const data = [
       studies: ["Dental Hygiene Study 1", "Dental Hygiene Study 2"]
     },
     {
+      id: 12,
       name: "Dra. Rachel Turner",
       specialty: "Orthodontics",
       location: "City L",
@@ -160,6 +172,7 @@ export const data = [
       studies: ["Orthodontics Study 1", "Orthodontics Study 2"]
     },
     {
+      id: 13,
       name: "Dr. Mark Foster",
       specialty: "Oral Surgery",
       location: "City M",
@@ -170,6 +183,7 @@ export const data = [
       studies: ["Oral Surgery Study 1", "Oral Surgery Study 2"]
     },
     {
+      id: 14,
       name: "Dra. Jessica Adams",
       specialty: "Pediatric Dentistry",
       location: "City N",
@@ -180,6 +194,7 @@ export const data = [
       studies: ["Pediatric Dentistry Study 1", "Pediatric Dentistry Study 2"]
     },
     {
+      id: 15,
       name: "Dr. Christopher Young",
       specialty: "Cosmetic Dentistry",
       location: "City O",
@@ -190,6 +205,7 @@ export const data = [
       studies: ["Cosmetic Dentistry Study 1", "Cosmetic Dentistry Study 2"]
     },
     {
+      id: 16,
       name: "Dra. Laura Wilson",
       specialty: "General Dentistry",
       location: "City P",
@@ -200,6 +216,7 @@ export const data = [
       studies: ["General Dentistry Study 1", "General Dentistry Study 2"]
     },
     {
+      id: 17,
       name: "Dr. Brian Lewis",
       specialty: "Endodontics",
       location: "City Q",
@@ -210,6 +227,7 @@ export const data = [
       studies: ["Endodontics Study 1", "Endodontics Study 2"]
     },
     {
+      id: 18,
       name: "Dra. Amanda Harris",
       specialty: "Periodontics",
       location: "City R",
@@ -220,6 +238,7 @@ export const data = [
       studies: ["Periodontics Study 1", "Periodontics Study 2"]
     },
     {
+      id: 19,
       name: "Dr. Samuel Turner",
       specialty: "Prosthodontics",
       location: "City S",
@@ -230,6 +249,7 @@ export const data = [
       studies: ["Prosthodontics Study 1", "Prosthodontics Study 2"]
     },
     {
+      id: 20,
       name: "Dra. Emily Young",
       specialty: "Oral and Maxillofacial Surgery",
       location: "City T",
@@ -240,5 +260,6 @@ export const data = [
       studies: ["Oral and Maxillofacial Surgery Study 1", "Oral and Maxillofacial Surgery Study 2"]
     }
   ];
+  
   
 
