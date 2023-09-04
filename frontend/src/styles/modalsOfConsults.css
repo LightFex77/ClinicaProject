@@ -9,9 +9,12 @@
     position: fixed;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.5);
-    z-index: 1000; /* Asegúrate de que el valor sea mayor que el z-index de otros elementos */
+    z-index: 1;
 }
 
 .modal-consults-g {
-    /* Agrega estilos para tu modal aquí */
+    border-radius: 5px;
+    width: 80%;
+    height: 80%;
+    background-color: #ffff;
 }
