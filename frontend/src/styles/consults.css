@@ -33,6 +33,7 @@ td:nth-child(odd){
     gap: 5px;
 }
 .consults-buttons button{
+    cursor: pointer;
     padding: 0;
     width: 5rem;
     height: 2rem;
