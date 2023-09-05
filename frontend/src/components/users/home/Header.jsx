@@ -5,7 +5,8 @@ import Button from "../../elements/Button";
 import { useState } from "react";
 import { showLogin, showRegister } from "../../../utils/showLogins";
 
-const Header = () => {
+// eslint-disable-next-line react/prop-types
+const Header = ({navBar}) => {
 
   const [showL, sethowL] = useState(false);
   const [showR, sethowR] = useState(false);
@@ -24,7 +25,7 @@ const Header = () => {
           <Button buttonText="Registrarse" onClick={() => sethowR(true)}></Button>
         </div>
       </header>
-      <NavBar />
+      {navBar ? <NavBar /> : null}
     </div>
   );
 };

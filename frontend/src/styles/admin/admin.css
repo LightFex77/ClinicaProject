@@ -1,0 +1,75 @@
+.admin-search-users{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+    background-color: #dbb6ee;
+    width: 100%;
+}
+
+
+.admin-form{
+    margin-top: 5rem;
+    width: 60%;
+}
+.admin-title{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.admin-input{
+    width: 80%;
+}
+.admin-btn{
+    width: 20%;
+}
+.admin-form-search{
+    display: flex;
+    width: 100%;
+    gap: 5px;
+}
+.admin-form h1 {
+    color: #4b1c71;
+}
+.admin-form span hr {
+    border: 1px #4b1c71 solid;
+    margin-bottom: 2rem;
+    width: 40%;
+}
+.admin-form label input{
+    width: 100%;
+    padding: 10px;
+    font-size: large;
+}
+.admin-form label{
+    width: 100%;
+}
+
+
+.waiting-search{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+.waiting-search label{
+    width: 20%;
+}
+.waiting-search table{
+    border: 1px #7f4ca5 solid;
+    border-collapse: collapse;
+    width: 80%;
+}
+.waiting-search table td, th{
+    flex-wrap: wrap;
+    padding: 10px;
+}
+.waiting-search table td select {
+    width: 100%;
+    padding: 10px 0;
+}
