@@ -2,6 +2,8 @@ const {
   registerServices,
   loginServices,
   checkUserExists,
+  getUsersServices,
+  updateRolServices
 } = require("../services/users.service");
 
 const registerController = async (req, res) => {
@@ -65,7 +67,31 @@ const loginController = async (req, res) => {
   }
 };
 
+const getUsersController = async (req, res) => {
+  const { user } = req.body;
+
+  const response = await getUsersServices(user);
+
+  res.status(200).json({
+    user: response
+  })
+}
+
+const updateRolController = async (req, res) => {
+  const { id, rol } = req.body;
+
+  const response = await updateRolServices(rol, id);
+
+  res.status(200).json({
+    user: response
+  })
+}
+
+
+
 module.exports = {
   registerController,
   loginController,
+  getUsersController,
+  updateRolController
 };

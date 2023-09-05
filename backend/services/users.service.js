@@ -45,8 +45,38 @@ const loginServices = async (user, password) => {
   return result.rows[0];
 };
 
+const getUsersServices = async (user) => {
+  const query = 
+  `
+  SELECT id, name, last_name, email, phone_number, rol
+	FROM public.users
+  WHERE (email = $1 OR phone_number = $1)
+  ;
+  `
+  const values = [user];
+
+  const result = await connection.query(query, values);
+
+  return result.rows[0]
+}
+
+const updateRolServices = async (rol, id) => {
+  const query = 
+  `
+  UPDATE public.users
+	SET rol=$1
+	WHERE id = $2;
+  `
+  const values = [rol, id];
+
+  const result = await connection.query(query, values);
+
+  return result.rows[0]
+}
 module.exports = {
   registerServices,
   loginServices,
-  checkUserExists
+  checkUserExists,
+  getUsersServices,
+  updateRolServices
 };
