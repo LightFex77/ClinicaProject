@@ -4,15 +4,15 @@
 /* Botones */
 .element-components button{
     padding: 1rem 3rem;
-    background-color: #4b1c71;
+    background-color: #7D027D;
     border: 0;
     cursor: pointer;
-    color: #dbb6ee;
+    color: #ffff;
     flex: 1;
     transition: background-color 0.2s, color 0.2s;
 }
 .element-components button:hover{
     color: #ffff;
-    background-color: #b57edc;
+    background-color: #BB7CB7;
     transition: background-color 0.2s, color 0.2;
 }

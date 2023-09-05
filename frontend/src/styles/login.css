@@ -1,15 +1,23 @@
 .register-container{
+    top: 0;
     height: 100%;
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
     position: fixed;
+    z-index: 3;
     flex-direction: column;
     background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro */
 }
+.register-container .header-body h1{
+    color: #7D027D;
+}
+.register-container .header-body hr{
+    border: 1px #7D027D solid;
+}
 .register-container form {
-    background-color: #ffff;
+    background-color: #ECECEB;
     padding: 30px;
     width: 30rem;
     display: flex;

@@ -16,7 +16,8 @@ const ConsultsTableProgram = ({filteredDentists}) => {
   }
 
   return (
-    <table className="consults-table">
+    <div className="consults-table-container">
+      <table className="consults-table">
       {showProfile ? <Profile id={profileId}/> : null}
       {showSchedule ? <Schedule />: null}
         <thead>
@@ -46,6 +47,7 @@ const ConsultsTableProgram = ({filteredDentists}) => {
           ))}
         </tbody>
       </table>
+    </div>
   )
 }
 

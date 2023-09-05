@@ -68,14 +68,23 @@ const loginController = async (req, res) => {
 };
 
 const getUsersController = async (req, res) => {
-  const { user } = req.body;
 
-  const response = await getUsersServices(user);
+  try {
+    const { user } = req.body;
 
-  res.status(200).json({
-    user: response
-  })
-}
+    const response = await getUsersServices(user);
+
+
+    if (response) {
+      res.status(200).json({ user: response });
+    } else {
+      res.status(404).json({ error: "Usuario no encontrado" });
+    }
+  } catch (error) {
+    res.status(500).json({ error: "Error en el servidor" });
+  }
+};
+
 
 const updateRolController = async (req, res) => {
   const { id, rol } = req.body;
@@ -86,6 +95,7 @@ const updateRolController = async (req, res) => {
     user: response
   })
 }
+
 
 
 

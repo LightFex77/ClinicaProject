@@ -15,9 +15,9 @@ const App = () => {
     <BrowserRouter>
     <Routes>
     <Route path= "/" element = {<><Header navBar={true} /><Home /></>} />
-    <Route path="/consultas" element = {<Consults />}/>
+    <Route path="/consultas" element = {<><Header navBar={true} /><Consults /></>}/>
 
-    <Route path="/dentists-panel" element={<Dentists />} />
+    <Route path="/dentists-panel" element={<><Header /><Dentists /></>} />
 
     <Route path="/admin-tools" element= {<><Header navBar={false} /><AdminTools /></>}/>
     </Routes>

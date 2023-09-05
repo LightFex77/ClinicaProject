@@ -36,7 +36,7 @@ const Login = ({ setShowLogin }) => {
       <form onSubmit={formik.handleSubmit}>
         <HeaderBody
           h1Text="Iniciar Sesión"
-          style={{ textAlign: "center", color: "#7f4ca5" }}
+          style={{ textAlign: "center", color: "#BB7CB7"}}
         />
         <Input
           placeholder="Teléfono o email"

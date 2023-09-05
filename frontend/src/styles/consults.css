@@ -1,32 +1,44 @@
 .consults-container{
+    height: 100%;
+    background-color: #BC84BB;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 40px 0;
 }
-.consults-table{
-    border-collapse: collapse;
-    height: 80%;
+.consults-table-container{
+    height: 30rem;
     width: 80%;
+    overflow: auto;
+    box-shadow: 5px 5px 10px #7D027D;
+    background-color: #ECECEB;
+    display: flex;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+
+.consults-table{
+    font-size: 1rem;
+    border: 1px #7D027D solid;
+    border-collapse: collapse;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 80%;
+}
+.consults-table thead{
+    background-color: #7D027D;
+}
+.consults-table th{
+    height: 50px;
+    border-bottom: 1px #b57edc solid;
+    text-transform: uppercase;
+    color: #ffff;
 }
 .consults-table td {
     padding: 5px 20px;
     text-align: center;
-}
-.consults-table-title{
-    background-color: #7f4ca5;
-    height: 50px;
-    border-bottom: 1px #b57edc solid;
-}
-td:nth-child(even){
-    background-color: #7f4ca5;
-    border-bottom: 1px #b57edc solid;
-    color: #ffff;
-}
-td:nth-child(odd){
-    background-color: #b57edc;
-    border-bottom: 1px #7f4ca5 solid;
-    color: #ffff;
+    border-bottom: 1px #7D027D solid;
 }
 .consults-buttons{
     display: flex;
@@ -39,9 +51,9 @@ td:nth-child(odd){
     height: 2rem;
 }
 .btn-profile{
-    background-color: #4b1c71;
+    background-color: #7D027D;
     border: 0;
-    color: #dbb6ee;
+    color: #ffff;
     transition: background-color 0.2s, color 0.2s;
 }
 .btn-program{
@@ -64,11 +76,13 @@ td:nth-child(odd){
 /* Filtro de busqueda */
 
 .consults-filter{
-    background-color: #7f4ca5;
-    padding: 10px 0;
+    box-shadow: 5px 5px 10px #7D027D;
+    background-color:#ECECEB;
+    margin-top: 80px;
+    padding: 20px 0;
     border-radius: 5px;
     flex-wrap: wrap;
-    height: 20%;
+    height: 40%;
     width: 80%;
     display: flex;
     align-items: center;
@@ -84,7 +98,6 @@ td:nth-child(odd){
     justify-content: center;
 }
 .serach-filter p {
-    color: #ffff;
 }
 .serach-filter span{
     display: flex;
@@ -99,6 +112,8 @@ td:nth-child(odd){
     text-align: center;
     border-radius: 5px;
     border: 0;
+    background-color: #7D027D;
+    color: #ffff;
 }
 
 .consults-my-quotes{
@@ -107,9 +122,6 @@ td:nth-child(odd){
     gap: 5px;
     width: 80%;
 }
-.consults-my-quotes p {
-    color: #ffff;
-}
 .consults-my-quotes label {
     width: 100%;
 }
@@ -117,6 +129,6 @@ td:nth-child(odd){
     flex: 1;
     height: 4rem;
     padding: 0;
-    background-color: #4b1c71;
+    background-color: #7D027D;
     border-radius: 5px;
 }

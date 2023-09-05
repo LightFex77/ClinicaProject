@@ -1,7 +1,10 @@
+import SideMenu from "./sideMenu"
+
 const Dentists = () => {
   return (
-    <div>
-      
+    <div className="dentist-container">
+      <SideMenu />
+        <div className= "dentist-panel"></div>
     </div>
   )
 }
