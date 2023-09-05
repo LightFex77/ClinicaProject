@@ -5,6 +5,7 @@ import Header from "./components/users/home/Header";
 import AdminTools from "./components/admin/AdminsTools";
 import Dentists from "./components/dentists/Dentists";
 import Consults from "./components/users/consults/Consults";
+import SideMenu from "./components/dentists/sideMenu";
 import "./styles/admin/admin.css";
 import "./styles/elements.css";
 import "./styles/consults.css";
@@ -17,7 +18,7 @@ const App = () => {
     <Route path= "/" element = {<><Header navBar={true} /><Home /></>} />
     <Route path="/consultas" element = {<><Header navBar={true} /><Consults /></>}/>
 
-    <Route path="/dentists-panel" element={<><Header /><Dentists /></>} />
+    <Route path="/dentists-panel/*" element={<><Header /><SideMenu /><Dentists /></>} />
 
     <Route path="/admin-tools" element= {<><Header navBar={false} /><AdminTools /></>}/>
     </Routes>
