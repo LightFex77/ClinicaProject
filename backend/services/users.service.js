@@ -34,7 +34,7 @@ const checkUserExists = async (email, phone_number) => {
 
 const loginServices = async (user, password) => {
   const query = `
-    SELECT id, name, last_name, email, phone_number, rol, password
+    SELECT id, name, last_name, email, phone_number, rol
     FROM public.users
     WHERE (email = $1 OR phone_number = $1) AND password = $2;
     `;

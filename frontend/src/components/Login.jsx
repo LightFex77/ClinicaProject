@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState} from "react";
 import Button from "./elements/Button";
 import HeaderBody from "./elements/HeaderBody";
 import Input from "./elements/Input";
@@ -24,19 +24,20 @@ const Login = ({ setShowLogin }) => {
       try {
         const loginResponse = await login(user, password);
         setResponse(loginResponse);
-        loginResponse.status === 200 && setShowLogin(false);
+        //Esperando si todo fue ok y recibir el objeto
+        loginResponse.res.status === 200 && setShowLogin(false);
+        localStorage.setItem("user", JSON.stringify(loginResponse.dataUser))
       } catch (error) {
         alert("Error al iniciar sesión");
       }
     },
   });
-
   return (
     <div className="register-container">
       <form onSubmit={formik.handleSubmit}>
         <HeaderBody
           h1Text="Iniciar Sesión"
-          style={{ textAlign: "center", color: "#BB7CB7"}}
+          style={{ textAlign: "center", color: "#BB7CB7" }}
         />
         <Input
           placeholder="Teléfono o email"
@@ -46,7 +47,7 @@ const Login = ({ setShowLogin }) => {
           onChange={formik.handleChange}
           error={
             formik.errors.user ||
-            (response && response.status === 404 && "El usuario no existe")
+            (response && response.res.status === 404 && "El usuario no existe")
           }
         />
         <Input
@@ -57,7 +58,7 @@ const Login = ({ setShowLogin }) => {
           onChange={formik.handleChange}
           error={
             formik.errors.password ||
-            (response && response.status === 400 && "Contraseña incorrecta")
+            (response && response.res.status === 400 && "Contraseña incorrecta")
           }
         />
 
