@@ -3,7 +3,8 @@ const {
   loginServices,
   checkUserExists,
   getUsersServices,
-  updateRolServices
+  updateRolServices,
+  validateDentistProfileS
 } = require("../services/users.service");
 
 const registerController = async (req, res) => {
@@ -96,6 +97,25 @@ const updateRolController = async (req, res) => {
   })
 }
 
+const validateDentistProfileC = async (req, res) => {
+  const { id } = req.body;
+
+  const response = await validateDentistProfileS(id);
+
+  if (response) {
+    // El usuario existe en la base de datos
+    res.status(200).json({
+      res: "El usuario existe"
+    });
+  } else {
+    // El usuario no existe en la base de datos
+    res.status(400).json({
+      res: "El usuario no existe"
+    });
+  }
+};
+
+
 
 
 
@@ -103,5 +123,6 @@ module.exports = {
   registerController,
   loginController,
   getUsersController,
-  updateRolController
+  updateRolController,
+  validateDentistProfileC
 };

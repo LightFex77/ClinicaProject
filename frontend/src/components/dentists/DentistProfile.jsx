@@ -1,7 +1,10 @@
 const DentistProfile = () => {
+  const getUserStorage = () => {
+    return localStorage.getItem("user");
+  }
   return (
     <div>
-      Hola
+      {getUserStorage()}
     </div>
   )
 }

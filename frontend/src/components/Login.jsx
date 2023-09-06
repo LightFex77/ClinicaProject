@@ -2,7 +2,7 @@ import { useState} from "react";
 import Button from "./elements/Button";
 import HeaderBody from "./elements/HeaderBody";
 import Input from "./elements/Input";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
 import { login } from "../utils/usersLogin";
 import { useFormik } from "formik";
 import * as Yup from "yup";
@@ -25,13 +25,17 @@ const Login = ({ setShowLogin }) => {
         const loginResponse = await login(user, password);
         setResponse(loginResponse);
         //Esperando si todo fue ok y recibir el objeto
-        loginResponse.res.status === 200 && setShowLogin(false);
-        localStorage.setItem("user", JSON.stringify(loginResponse.dataUser))
+        if (loginResponse.res.status === 200) {
+          setShowLogin(false);
+          localStorage.setItem("user", JSON.stringify(loginResponse.dataUser))
+          window.location.reload()
+        }
       } catch (error) {
         alert("Error al iniciar sesión");
       }
     },
   });
+  
   return (
     <div className="register-container">
       <form onSubmit={formik.handleSubmit}>

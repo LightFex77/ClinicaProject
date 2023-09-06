@@ -73,10 +73,26 @@ const updateRolServices = async (rol, id) => {
 
   return result.rows[0]
 }
+
+const validateDentistProfileS = async (id) => {
+  const query = 
+  `
+  SELECT id, city, address, studies, descriptions, user_id, specialty
+  FROM public.dentists
+  WHERE (user_id = $1);
+  `;
+  const values = [id];
+
+  const result = await connection.query(query, values);
+
+  return result.rows[0];
+}
+
 module.exports = {
   registerServices,
   loginServices,
   checkUserExists,
   getUsersServices,
-  updateRolServices
+  updateRolServices,
+  validateDentistProfileS
 };

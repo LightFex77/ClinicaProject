@@ -2,8 +2,30 @@ import "../../../styles/homeContent.css";
 import HeaderBody from "../../elements/HeaderBody";
 import Button from "../../elements/Button";
 import AboutAs from "../section-services/AboutAs";
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 
 const Main = () => {
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    const user = localStorage.getItem("user")
+    if(user){
+        const userData =JSON.parse(user);
+        const {rol} = userData.user
+        switch(rol){
+          case "ODT":
+            navigate("/dentists-panel")
+            break
+          case "ADM":
+            console.log("Es Admin")
+            break
+          default:
+            break
+        }
+      }
+  },[])
+
   return (
     <div className="main-container">
       <section className="main-section-info">
