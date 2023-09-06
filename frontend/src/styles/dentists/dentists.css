@@ -1,16 +1,15 @@
-.dentist-container{
+/* Estructura general */
+.dentist-container {
     display: flex;
     background-color: #BC85BC;
-    height: 100vh;  
-    padding-top: 80px;
-    padding-bottom: 20px;
     padding-right: 20px;
-}
-
-.side-menu-container{
+    min-height: 100vh;
+  }
+  
+  .side-menu-container {
     padding: 80px 20px;
-    height: 100vh;
     top: 0;
+    bottom: 0;
     width: 12rem;
     background-color: #ECECEB;
     color: #000;
@@ -19,8 +18,10 @@
     gap: 10px;
     position: fixed;
     box-shadow: 5px 5px 10px #7D027D;
-}
-.side-menu-container ul {
+  }
+  
+  /* Menú lateral */
+  .side-menu-container ul {
     color: #000;
     margin-top: 20px;
     list-style: none;
@@ -28,15 +29,15 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-}
-.side-menu-container ul li{
+  }
+  
+  .side-menu-container ul li {
     font-size: large;
-    /* padding: 10px 0 10px 10px; */
-    border-radius: 5px;
     height: 2.5rem;
     display: flex;
-}
-.side-menu-container ul li a {
+  }
+  
+  .side-menu-container ul li a {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -46,34 +47,130 @@
     text-decoration: none;
     font-size: 1rem;
     border-radius: 5px;
-}
-.side-menu-container ul li a i{
+  }
+  
+  .side-menu-container ul li a i {
     width: 30px;
-}
-.dentitst-panel-container{
+  }
+  
+  /* Panel principal de dentistas */
+  .dentitst-panel-container {
     width: 100%;
     height: 100%;
     display: flex;
-}
-.dentist-panel{
-    height: 100vh;
+  }
+  
+  .dentist-panel {
+    margin-top: 85px;
+    margin-bottom: 20px;
+    min-height: 100%;
+    padding: 40px;
     width: 85%;
     margin-left: 265px;
-
     border-radius: 5px;
     background-color: #ECECEB;
     box-shadow: 5px 5px 10px #7D027D;
-}
-
-/* Opciones del panel dentistas */
-
-.side-menu-container ul li .active-link{
+  }
+  
+  /* Opciones del panel de dentistas */
+  .side-menu-container ul li .active-link {
     box-shadow: 5px 5px 10px #7D027D;
-}
-
-.side-menu-container ul li .active-link:hover{
+  }
+  
+  .side-menu-container ul li .active-link:hover,
+  .side-menu-container ul li .inactive-link:hover {
     transition: box-shadow 0.2s, background-color 0.2s;
-}
-.side-menu-container ul li .inactive-link:hover{
-    transition: box-shadow 0.2s, background-color 0.2s;
-}
+  }
+  
+  /* Componente Perfil */
+  .profile-header {
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+    background-color: #BC84BB;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+  
+  .profile-header h1 {
+    font-size: 2rem;
+    color: #7D027D;
+  }
+  
+  .profile-header h1 hr {
+    border: 1px #7D027D solid;
+  }
+  
+  .profile-header img {
+    background-color: #7D027D;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 100%;
+  }
+  .profile-header-d{
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .profile-container {
+    font-size: 1.2rem;
+    display: flex;
+    gap: 20px;
+  }
+  
+  .profile-details {
+    width: 100%;
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    flex-wrap: wrap;
+  }
+  
+  .profile-details label {
+    width: 100%;
+    height: 10%;
+    background-color: #BC84BB;
+    padding: 10px;
+  }
+  
+  .dentist-profile-container label {
+    color: #7D027D;
+  }
+  
+  .dentist-profile-container span {
+    font-weight: 100;
+    font-size: 1rem;
+    color: black;
+  }
+  
+  .details-info-container {
+    font-weight: bold;
+    display: flex;
+    padding-right: 20px;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+  
+  .profile-d {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 100%;
+    gap: 10px;
+    padding: 10px;
+    border-radius: 10px;
+  }
+  
+  .profile-d label {
+    font-weight: bold;
+  }
+  
+  .description-container {
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+  }
+  

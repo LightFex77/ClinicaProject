@@ -24,13 +24,13 @@ const checkUserExists = async (email, phone_number) => {
   SELECT id, name, last_name, email, phone_number, rol, password
   FROM public.users
   WHERE email = $1 OR phone_number = $2;
-  `
+  `;
   const values = [email, phone_number];
 
   const result = await connection.query(query, values);
 
-  return result.rows[0]
-}
+  return result.rows[0];
+};
 
 const loginServices = async (user, password) => {
   const query = `
@@ -46,47 +46,31 @@ const loginServices = async (user, password) => {
 };
 
 const getUsersServices = async (user) => {
-  const query = 
-  `
+  const query = `
   SELECT id, name, last_name, email, phone_number, rol
 	FROM public.users
   WHERE (email = $1 OR phone_number = $1)
   ;
-  `
+  `;
   const values = [user];
 
   const result = await connection.query(query, values);
 
-  return result.rows[0]
-}
+  return result.rows[0];
+};
 
 const updateRolServices = async (rol, id) => {
-  const query = 
-  `
+  const query = `
   UPDATE public.users
 	SET rol=$1
 	WHERE id = $2;
-  `
+  `;
   const values = [rol, id];
 
   const result = await connection.query(query, values);
 
-  return result.rows[0]
-}
-
-const validateDentistProfileS = async (id) => {
-  const query = 
-  `
-  SELECT id, city, address, studies, descriptions, user_id, specialty
-  FROM public.dentists
-  WHERE (user_id = $1);
-  `;
-  const values = [id];
-
-  const result = await connection.query(query, values);
-
   return result.rows[0];
-}
+};
 
 module.exports = {
   registerServices,
@@ -94,5 +78,4 @@ module.exports = {
   checkUserExists,
   getUsersServices,
   updateRolServices,
-  validateDentistProfileS
 };
