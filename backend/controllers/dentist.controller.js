@@ -1,4 +1,4 @@
-const { createProfileDentistS, verifyDentistProfile } = require("../services/dentist.service");
+const { createProfileDentistS, verifyDentistProfile} = require("../services/dentist.service");
 
 const createProfileDentistC = async (req, res) => {
   const { city, address, studies, descriptions, user_id, specialty } = req.body;
@@ -53,5 +53,5 @@ const checkDentistProfile = async (req, res) => {
 
 module.exports = {
   createProfileDentistC,
-  checkDentistProfile
-};
+  checkDentistProfile,
+}
