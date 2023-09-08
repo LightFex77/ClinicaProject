@@ -52,18 +52,17 @@ const getSchedulesService = async (dentist_id, date) => {
 
 const scheduleAppointmentService = async ({
   dentist_id,
-  schedule_id,
-  value,
+  schedule_id
 }) => {
   try {
     const query = `
     UPDATE public.schedules
-    SET is_available = $3
+    SET is_available = false
     WHERE dentist_id = $1 AND id = $2
     RETURNING *;
       `;
 
-    const values = [dentist_id, schedule_id, value];
+    const values = [dentist_id, schedule_id];
 
     const result = await connection.query(query, values);
 
@@ -84,13 +83,14 @@ const appointmentUserService = async (
   appointment_time,
   dentist_id,
   schedule_id,
-  patient_id
+  patient_id,
+  appointment_state
 ) => {
   try {
     const query = `
     INSERT INTO public.appointments(
-        appointment_date, appointment_time, dentist_id, patient_id, schedule_id)
-        VALUES ($1, $2, $3, $5, $4)
+        appointment_date, appointment_time, dentist_id, patient_id, schedule_id, appointment_state)
+        VALUES ($1, $2, $3, $5, $4, $6)
         RETURNING *;
     `;
     const values = [
@@ -99,6 +99,7 @@ const appointmentUserService = async (
       dentist_id,
       schedule_id,
       patient_id,
+      appointment_state = "pen"
     ];
 
     const result = await connection.query(query, values);
