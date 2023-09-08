@@ -79,13 +79,18 @@ const getAppointmentExistController = async (req, res) => {
       error: error.message,
     });
   }
-}; 
+};
 
 const cancelAndDeleteAppointmentController = async (req, res) => {
   try {
-    const { schedule_id, dentist_id, patient_id } = req.body;
+    const { schedule_id, dentist_id, patient_id, value = "anu" } = req.body;
 
-    const response = await cancelAndDeleteAppointmentService(schedule_id, dentist_id, patient_id);
+    const response = await cancelAndDeleteAppointmentService(
+      schedule_id,
+      dentist_id,
+      patient_id,
+      value
+    );
 
     res.status(200).json({
       message: response,

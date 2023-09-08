@@ -50,10 +50,7 @@ const getSchedulesService = async (dentist_id, date) => {
   return result.rows;
 };
 
-const scheduleAppointmentService = async ({
-  dentist_id,
-  schedule_id
-}) => {
+const scheduleAppointmentService = async ({ dentist_id, schedule_id }) => {
   try {
     const query = `
     UPDATE public.schedules
@@ -99,7 +96,7 @@ const appointmentUserService = async (
       dentist_id,
       schedule_id,
       patient_id,
-      appointment_state = "pen"
+      (appointment_state = "pen"),
     ];
 
     const result = await connection.query(query, values);
@@ -151,30 +148,39 @@ const getAppointmentExistService = async ({ user_id, dentist_id, rol }) => {
   }
 };
 
-const cancelAndDeleteAppointmentService = async (schedule_id, dentist_id, patient_id) => {
-    try {
-      // Actualizar la cita a disponible
-      const updateQuery = `
-        UPDATE public.schedules
-        SET is_available = true
-        WHERE id = $1 AND dentist_id = $2;
-      `;
-      const updateValues = [schedule_id, dentist_id];
-      await connection.query(updateQuery, updateValues);
-  
-      // Eliminar la cita
-      const deleteQuery = `
-        DELETE FROM public.appointments
-        WHERE dentist_id = $1 AND patient_id = $2 AND schedule_id = $3;
-      `;
-      const deleteValues = [dentist_id, patient_id, schedule_id];
-      await connection.query(deleteQuery, deleteValues);
-  
-      return "Cita cancelada y eliminada con éxito.";
-    } catch (error) {
-      return "Error al cancelar y eliminar la cita: " + error.message;
+const cancelAndDeleteAppointmentService = async (
+  schedule_id,
+  dentist_id,
+  patient_id,
+  value
+) => {
+  try {
+    // Actualizar la cita a disponible
+    const updateQuery = `
+      UPDATE public.appointments
+	    SET appointment_state = $4
+        WHERE schedule_id = $1 AND dentist_id = $2 AND patient_id = $3
+      RETURNING *;
+    `;
+    const updateValues = [
+      schedule_id,
+      dentist_id,
+      patient_id,
+      value
+    ];
+    
+    const result = await connection.query(updateQuery, updateValues);
+
+    if (result.rowCount === 1) {
+      return "Cita cancelada con éxito";
+    } else {
+      return "No se encontró la cita para cancelar";
     }
-  };
+  } catch (error) {
+    return "Error al cancelar la cita: " + error.message;
+  }
+};
+
 
 module.exports = {
   createSchedulesService,
@@ -182,5 +188,5 @@ module.exports = {
   scheduleAppointmentService,
   appointmentUserService,
   getAppointmentExistService,
-cancelAndDeleteAppointmentService
+  cancelAndDeleteAppointmentService,
 };
