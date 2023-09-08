@@ -1,3 +1,5 @@
+const {verifyToken, checkUserRole} = require('../middlewares/authMiddleware')
+
 const {
   registerController,
   loginController,
@@ -7,9 +9,11 @@ const {
 const { Router } = require("express");
 const router = Router();
 
-router.post("/login", registerController);
-router.post("/login-access", loginController);
-router.post("/get-user", getUsersController);
-router.post("/update-rol", updateRolController);
+router.post("/register", registerController);
+router.post("/login", loginController);
+
+//Rol Admin
+router.get("/users", verifyToken, checkUserRole(["ADM"]), getUsersController);
+router.post("/users/:id", verifyToken, checkUserRole(["ADM"]) ,updateRolController);
 
 module.exports = router;

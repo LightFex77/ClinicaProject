@@ -1,8 +1,10 @@
+require('dotenv').config({path: "config.env"});
 const express = require('express');
 const cors = require("cors");
 const usersRouter = require("./routers/users.router");
 const dentistRouter = require("./routers/dentist.router");
 const schedulesRouter = require("./routers/schedules.router");
+
 const app = express();
 
 app.use(express.json());

@@ -1,4 +1,5 @@
 const { Router } = require("express");
+const {verifyToken, checkUserRole} = require("../middlewares/authMiddleware");
 const router = Router();
 const {
   createSchedulesController,
@@ -9,14 +10,14 @@ const {
 } = require("../controllers/schedules.controller");
 
 //Crear Horarios
-router.post("/create-schedule", createSchedulesController);
+router.post("/create-schedule",verifyToken, checkUserRole(["ODT"]) ,createSchedulesController);
 //Conseguir Horarios
-router.post("/get-schedule", getSchedulesController);
+router.post("/get-schedule", verifyToken, getSchedulesController);
 //Crear Citas
-router.post("/create-appointment", scheduleAppointmentController);
+router.post("/create-appointment", verifyToken, scheduleAppointmentController);
 //Obtener Citas
-router.post("/get-appointment", getAppointmentExistController);
+router.post("/get-appointment", verifyToken, getAppointmentExistController);
 
-router.post("/cancel-appointment", cancelAndDeleteAppointmentController);
+router.post("/cancel-appointment", verifyToken ,cancelAndDeleteAppointmentController);
 
 module.exports = router;

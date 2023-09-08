@@ -1,3 +1,9 @@
+const jwt = require("jsonwebtoken");
+
+const sendResponse = (res, status, message) => {
+  return res.status(status).json({ message });
+};
+
 const {
   registerServices,
   loginServices,
@@ -9,100 +15,91 @@ const {
 const registerController = async (req, res) => {
   const { name, last_name, email, phone_number, rol, password } = req.body;
 
-  // Verificar si ya existe un usuario con el mismo correo o número de teléfono
-  const existingUser = await checkUserExists(email, phone_number);
+  try {
+    const existingUser = await checkUserExists(email, phone_number);
 
-  if (existingUser) {
-    // El usuario ya existe, devolver un error
-    return res.status(400).json({
-      error: "Ya existe un usuario con el mismo correo o número de teléfono.",
-    });
-  }
+    if (existingUser) {
+      return sendResponse(res, 400, "Ya existe un usuario con el mismo correo o número de teléfono.");
+    }
 
-  // Si no existe, proceder con el registro
-  const register = await registerServices(
-    name,
-    last_name,
-    email,
-    phone_number,
-    rol,
-    password
-  );
+    const registeredUser = await registerServices(
+      name,
+      last_name,
+      email,
+      phone_number,
+      rol,
+      password
+    );
 
-  if (register) {
-    // Registro exitoso
-    return res.status(200).json({
-      message: "Registro exitoso.",
-    });
-  } else {
-    // Ocurrió un error durante el registro
-    return res.status(500).json({
-      error: "Se produjo un error durante el registro.",
-    });
+    if (registeredUser) {
+      return sendResponse(res, 200, "Registro exitoso.");
+    } else {
+      return sendResponse(res, 500, "Se produjo un error durante el registro.");
+    }
+  } catch (error) {
+    return sendResponse(res, 500, "Error en el servidor.");
   }
 };
 
 const loginController = async (req, res) => {
   const { user, password } = req.body;
 
-  const validateUser = await checkUserExists(user, user);
-  const result = await loginServices(user, password);
+  try {
+    const userRow = await loginServices(user, password);
 
-  if (!validateUser) {
-    return res.status(404).json({
-      error: "El usuario no existe",
+    if (!userRow) {
+      return sendResponse(res, 404, "El usuario no existe");
+    }
+
+    const token = jwt.sign(userRow, process.env.JWT_KEY_SECRET, {
+      expiresIn: 86400
     });
-  } else if (validateUser.password !== password) {
-    return res.status(400).json({
-      error: "Contraseña incorrecta",
-    });
-  } else if (result) {
-    res.status(200).json({
-      user: result,
-    });
-  } else {
-    return res.status(500).json({
-      error: "Se produjo un error durante el inicio de sesion",
-    });
+    return sendResponse(res, 200, { token });
+  } catch (error) {
+    return sendResponse(res, 500, "Error en el servidor");
   }
 };
 
 const getUsersController = async (req, res) => {
-
   try {
-    const { user } = req.body;
+    const { user } = req.query; // Obtén el valor de "user" desde la URL
 
     const response = await getUsersServices(user);
 
-
     if (response) {
-      res.status(200).json({ user: response });
+      return sendResponse(res, 200, { user: response });
     } else {
-      res.status(404).json({ error: "Usuario no encontrado" });
+      return sendResponse(res, 404, { error: "Usuario no encontrado" });
     }
   } catch (error) {
-    res.status(500).json({ error: "Error en el servidor" });
+    return sendResponse(res, 500, { error: "Error en el servidor" });
   }
 };
 
-
 const updateRolController = async (req, res) => {
-  const { id, rol } = req.body;
+  try {
+    const { id } = req.params;
+    const { rol } = req.body;
 
-  const response = await updateRolServices(rol, id);
+    // Realiza la actualización en la base de datos utilizando el id y el nuevo rol
+    const response = await updateRolServices(rol, id);
+    console.log(response);
 
-  res.status(200).json({
-    user: response
-  })
-}
-
-
-
+    // Verifica si la actualización fue exitosa y responde con el resultado
+    if (response) {
+      return sendResponse(res, 200, { user: response });
+    } else {
+      return sendResponse(res, 404, { error: "Usuario no encontrado" });
+    }
+  } catch (error) {
+    return sendResponse(res, 500, { error: "Error en el servidor" });
+  }
+};
 
 
 module.exports = {
   registerController,
   loginController,
   getUsersController,
-  updateRolController
+  updateRolController,
 };
