@@ -83,7 +83,8 @@ const getAppointmentExistController = async (req, res) => {
 
 const cancelAndDeleteAppointmentController = async (req, res) => {
   try {
-    const { schedule_id, dentist_id, patient_id, value = "anu" } = req.body;
+    req.body.value = "anu" 
+    const { schedule_id, dentist_id, patient_id, value} = req.body;
 
     const response = await cancelAndDeleteAppointmentService(
       schedule_id,
