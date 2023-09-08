@@ -19,7 +19,11 @@ const registerController = async (req, res) => {
     const existingUser = await checkUserExists(email, phone_number);
 
     if (existingUser) {
-      return sendResponse(res, 400, "Ya existe un usuario con el mismo correo o número de teléfono.");
+      return sendResponse(
+        res,
+        400,
+        "Ya existe un usuario con el mismo correo o número de teléfono."
+      );
     }
 
     const registeredUser = await registerServices(
@@ -32,7 +36,10 @@ const registerController = async (req, res) => {
     );
 
     if (registeredUser) {
-      return sendResponse(res, 200, "Registro exitoso.");
+      const token = jwt.sign(userRow, process.env.JWT_KEY_SECRET, {
+        expiresIn: 86400,
+      });
+      return sendResponse(res, 200, { token });
     } else {
       return sendResponse(res, 500, "Se produjo un error durante el registro.");
     }
@@ -52,7 +59,7 @@ const loginController = async (req, res) => {
     }
 
     const token = jwt.sign(userRow, process.env.JWT_KEY_SECRET, {
-      expiresIn: 86400
+      expiresIn: 86400,
     });
     return sendResponse(res, 200, { token });
   } catch (error) {
@@ -95,7 +102,6 @@ const updateRolController = async (req, res) => {
     return sendResponse(res, 500, { error: "Error en el servidor" });
   }
 };
-
 
 module.exports = {
   registerController,
