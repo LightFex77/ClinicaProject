@@ -113,7 +113,7 @@ const appointmentUserService = async (
   }
 };
 
-const getAppointmentExistService = async ({ user_id, dentist_id, rol }) => {
+const getAppointmentExistService = async ({ user_id, dentist_id, rol, value }) => {
   if (rol === "PTT") {
     const query = `
     SELECT ap.id, ud.name, ud.last_name, ud.phone_number, ap.appointment_date, ap.appointment_time, d.specialty
@@ -125,9 +125,9 @@ const getAppointmentExistService = async ({ user_id, dentist_id, rol }) => {
     INNER JOIN users AS ud
     ON d.user_id = ud.id
 
-    WHERE ap.patient_id = $1
+    WHERE ap.patient_id = $1 AND appointment_state = $2
     `;
-    const values = [user_id];
+    const values = [user_id, value];
     const result = await connection.query(query, values);
 
     return result.rows;
@@ -139,9 +139,9 @@ const getAppointmentExistService = async ({ user_id, dentist_id, rol }) => {
     INNER JOIN users AS up
     ON up.id = ap.patient_id
 
-    WHERE dentist_id = $1
+    WHERE dentist_id = $1 AND appointment_state = $2
     `;
-    const values = [dentist_id];
+    const values = [dentist_id, value];
     const result = await connection.query(query, values);
 
     return result.rows;
